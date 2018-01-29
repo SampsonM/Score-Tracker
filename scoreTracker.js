@@ -50,7 +50,7 @@ p1Button.addEventListener("click", function() {
     } p1.textContent = p1Score;
 });
 
-//p2 event
+//p2 button
 p2Button.addEventListener("click", function() {
     if (gameOver && p1Score === winningScore) showBox('Player 1 won.. reset game...');
     if (!gameOver) {
@@ -82,8 +82,8 @@ function reset () {
 
 //max score function also resets score on change
 userLimit.addEventListener("change", function() {
-    limit.textContent = this.value;
-    winningScore = Number(this.value);
+    limit.textContent = Math.abs(this.value);
+    winningScore = Math.abs(Number(this.value));
     reset();
 });
 
